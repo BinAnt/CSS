@@ -1,0 +1,76 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="微客">
+  <meta name="tencent-site-verification" content="ba744fd343ddefc429e743f1d1a4d44d"/>
+  <meta name="keywords" content="微客">
+
+  <title>不可思议的纯CSS导航栏下划线跟随效果</title>
+  <!-- Bootstrap core CSS -->
+</head>
+<style>
+ul,li {
+	list-style: none;
+}
+ul {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+li {
+    position: relative;
+    padding: 20px;
+    font-size: 24px;
+    color: #000;
+    line-height: 1;
+    transition: 0.2s all linear;
+    cursor: pointer;
+}
+
+li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 100%;
+    border-bottom: 2px solid #000;
+    transition: 0.2s all linear;
+}
+
+li:hover::before {
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition-delay: 0.1s;
+    border-bottom-color: #000;
+    z-index: -1;
+}
+
+li:hover ~ li::before {
+    left: 0;
+}
+
+li:active {
+    background: #000;
+    color: #fff;
+}
+
+</style>
+<body>
+<ul>
+  <li>不可思议的CSS</li>
+  <li>导航栏</li>
+  <li>光标小下划线跟随</li>
+  <li>PURE CSS</li>
+  <li>Nav Underline</li>
+</ul>
+
+</body>
+</html>
